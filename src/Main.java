@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        task8();
+        task3();
     }
 
     public static void task1() {
@@ -28,7 +28,7 @@ public class Main {
     }
 
     public static void task3() {
-        int population = 12_000_000;
+        double  population = 12_000_000;
         final double BIRTH_RATE = 0.017;
         final double MORTALITY_RATE = 0.008;
         double countOfBirth;
@@ -37,7 +37,7 @@ public class Main {
         for (int i = 1; i <= 10; i++) {
             countOfBirth = population * BIRTH_RATE;
             countOfMortality = population * MORTALITY_RATE;
-            population = (int) (population + countOfBirth - countOfMortality);
+            population = population + countOfBirth - countOfMortality;
 
             System.out.println("Год " + i + " ,численность населения составляет " + population);
         }
@@ -45,12 +45,12 @@ public class Main {
 
     public static void task4() {
         final double CREDIT_RATE = 1.07;
-        int capital = 15_000;
+        double  capital = 15_000;
         int countOfMonths = 0;
-        capital = (int) (capital * CREDIT_RATE);
+        capital = capital * CREDIT_RATE;
 
         while (capital < 12_000_000) {
-            capital = (int) (capital * CREDIT_RATE);
+            capital = capital * CREDIT_RATE;
             countOfMonths++;
             System.out.println(countOfMonths + " месяц. На счете " + capital);
         }
@@ -58,12 +58,12 @@ public class Main {
 
     public static void task5() {
         final double CREDIT_RATE = 1.07;
-        int capital = 15_000;
-        int countOfMonths = 0;
+        double  capital = 15_000;
+        int  countOfMonths = 0;
 
 
         while (capital < 12_000_000) {
-            capital = (int) (capital * CREDIT_RATE);
+            capital = capital * CREDIT_RATE;
             countOfMonths++;
 
             switch (countOfMonths) {
@@ -74,11 +74,11 @@ public class Main {
 
     public static void task6() {
         final double CREDIT_RATE = 1.07;
-        int capital = 15_000;
+        double  capital = 15_000;
         int countOfMonths = 9 * 12;
 
         for (int i = 0; i <= countOfMonths; i++) {
-            capital = (int) (capital * CREDIT_RATE);
+            capital = capital * CREDIT_RATE;
 
             if (i % 6 == 0 && i > 0) {
                 System.out.println(i / 6 + " полгода. Сумма накоплений = " + capital);
